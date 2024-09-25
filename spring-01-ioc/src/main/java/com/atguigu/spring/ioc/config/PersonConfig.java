@@ -14,15 +14,27 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class PersonConfig {
 
-    @Conditional(WindowsCondition.class)
-    @Bean("person windows")
-    public Person personOne(){
-        return new Person("Person win", 20);
+    @Bean("bill")
+    public Person bill() {
+        Person person = new Person();
+        person.setName("比爾蓋茲");
+        person.setAge(87);
+        return person;
     }
 
-    @Conditional(MacCondition.class)
-    @Bean("person mac")
-    public Person personTwo(){
-        return new Person("Person mac", 21);
+    @Bean("lisi")
+    public Person lisi() {
+        Person person = new Person();
+        person.setName("李四");
+        person.setAge(23);
+        return person;
+    }
+
+    @Bean("peter")
+    public Person peter() {
+        Person person = new Person();
+        person.setName("彼得");
+        person.setAge(22);
+        return person;
     }
 }
