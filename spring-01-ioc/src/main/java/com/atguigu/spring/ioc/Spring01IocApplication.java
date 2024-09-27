@@ -4,6 +4,7 @@ import com.atguigu.spring.ioc.bean.Car;
 import com.atguigu.spring.ioc.bean.Dog;
 import com.atguigu.spring.ioc.bean.Person;
 import com.atguigu.spring.ioc.controller.UserController;
+import com.atguigu.spring.ioc.dao.UserDao;
 import com.atguigu.spring.ioc.factory.BYDFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -22,7 +23,7 @@ public class Spring01IocApplication {
     public static void main(String[] args) throws FileNotFoundException {
         ConfigurableApplicationContext ioc = SpringApplication.run(Spring01IocApplication.class, args);
         System.out.println("--------------IOC 容器創建完成-----------");
-        File file = ResourceUtils.getFile("classpath:cat.png");
-        System.out.println("file:" + file);
+        UserDao bean = ioc.getBean(UserDao.class);
+        bean.showDataSource();
     }
 }
