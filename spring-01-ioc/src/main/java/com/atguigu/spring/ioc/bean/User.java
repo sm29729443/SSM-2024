@@ -1,5 +1,7 @@
 package com.atguigu.spring.ioc.bean;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import lombok.Data;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
@@ -40,5 +42,13 @@ public class User implements InitializingBean, DisposableBean {
     @Override
     public void destroy() throws Exception {
         System.out.println("DisposableBean destroy method active");
+    }
+    @PostConstruct
+    public void postConstruct(){
+        System.out.println("postConstruct active");
+    }
+    @PreDestroy
+    public void preDestroy(){
+        System.out.println("preDestroy active");
     }
 }
