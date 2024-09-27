@@ -9,21 +9,20 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.ConfigurableEnvironment;
+import org.springframework.util.ResourceUtils;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.sql.SQLOutput;
 import java.util.Map;
 
 @SpringBootApplication
 public class Spring01IocApplication {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         ConfigurableApplicationContext ioc = SpringApplication.run(Spring01IocApplication.class, args);
         System.out.println("--------------IOC 容器創建完成-----------");
-        Dog dog = ioc.getBean(Dog.class);
-        System.out.println("Dog: " + dog);
-        String dogName = ioc.getEnvironment().getProperty("dog.name");
-        String dogAge = ioc.getEnvironment().getProperty("dog.age");
-        System.out.println("Dog Name: " + dogName);
-        System.out.println("Dog Age: " + dogAge);
+        File file = ResourceUtils.getFile("classpath:cat.png");
+        System.out.println("file:" + file);
     }
 }
