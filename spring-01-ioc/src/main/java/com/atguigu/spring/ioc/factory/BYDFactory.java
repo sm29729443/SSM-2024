@@ -5,7 +5,7 @@ import com.atguigu.spring.ioc.bean.Car;
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class BYDFactory implements FactoryBean<Car> {
 
     /*

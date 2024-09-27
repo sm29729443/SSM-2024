@@ -23,7 +23,5 @@ public class Spring01IocApplication {
     public static void main(String[] args) throws FileNotFoundException {
         ConfigurableApplicationContext ioc = SpringApplication.run(Spring01IocApplication.class, args);
         System.out.println("--------------IOC 容器創建完成-----------");
-        UserDao bean = ioc.getBean(UserDao.class);
-        bean.showDataSource();
     }
 }
