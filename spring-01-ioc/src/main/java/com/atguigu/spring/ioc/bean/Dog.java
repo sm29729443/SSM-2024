@@ -17,4 +17,8 @@ public class Dog {
     private String name;
     @Value("${dog.age}")
     private int age;
+
+    public Dog() {
+        System.out.println("Dog created");
+    }
 }

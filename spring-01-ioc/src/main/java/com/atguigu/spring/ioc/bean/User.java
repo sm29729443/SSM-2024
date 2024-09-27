@@ -1,6 +1,8 @@
 package com.atguigu.spring.ioc.bean;
 
 import lombok.Data;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
@@ -8,11 +10,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 * Package: com.atguigu.spring.ioc.bean
 */
 @Data
-public class User {
+public class User implements InitializingBean, DisposableBean {
     private String name;
     private int age;
     private Car car;
-
+    @Autowired
+    private Dog dog;
     @Autowired
     public void setCar(Car car) {
         System.out.println("@Autowired 注入");
@@ -27,5 +30,15 @@ public class User {
     }
     public void destroyUser(){
         System.out.println("destroyUser active");
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        System.out.println("afterPropertiesSet active");
+    }
+
+    @Override
+    public void destroy() throws Exception {
+        System.out.println("DisposableBean destroy method active");
     }
 }
