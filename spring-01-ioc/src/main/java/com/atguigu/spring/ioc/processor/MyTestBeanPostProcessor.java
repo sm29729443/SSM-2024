@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 * ClassName: MyTestBeanPostProcessor
 * Package: com.atguigu.spring.ioc.processor
 */
-@Component
+//@Component
 public class MyTestBeanPostProcessor implements BeanPostProcessor {
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
