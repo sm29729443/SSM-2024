@@ -6,6 +6,7 @@ import com.atguigu.spring03tx.dao.BookDao;
 import com.atguigu.spring03tx.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 
@@ -21,6 +22,7 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private AccountDao accountDao;
 
+    @Transactional
     @Override
     public void checkout(String username, Integer bookId, Integer buyNumber) {
     // 1. 查詢書本訊息
