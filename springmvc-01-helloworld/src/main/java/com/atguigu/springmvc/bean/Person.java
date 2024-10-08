@@ -1,6 +1,8 @@
 package com.atguigu.springmvc.bean;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 /**
@@ -18,11 +20,4 @@ public class Person {
     private String sex;
     private String[] hobby;
     private String grade;
-}
-@Data
-@ToString
-class Address {
-    private String province;
-    private String city;
-    private String area;
 }
